@@ -1,7 +1,7 @@
 package Dal_Katmani;
 
 import Core_Katmani.ObjectHelper;
-import contract.KategoriContract;
+import types.KategoriContract;
 import interfaces.DALInterfaces;
 import java.util.List;
 

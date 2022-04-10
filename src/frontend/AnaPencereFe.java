@@ -24,7 +24,7 @@ public class AnaPencereFe extends JFrame implements FeInterfaces{
        // add(tabs);
         setJMenuBar(bar);
         
-        setTitle("Satış ve Stoko Programı");
+        setTitle("Satış ve Stok Programı");
         setSize(600,250);
         setVisible(true);           /* bu pencere açılsın diyoruz*/
         setLocationRelativeTo(null);   /* penceremizi oluşturduğumuzda ortada durmasını sağlıyoruz..*/
