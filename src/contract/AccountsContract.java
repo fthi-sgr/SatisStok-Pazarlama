@@ -1,14 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package contract;
-
 
 public class AccountsContract {
     private int id;
     private int yetkiId;
-    private int presonelId;
+    private int personelId;
     private String sifre;
 
     public int getId() {
@@ -27,12 +22,12 @@ public class AccountsContract {
         this.yetkiId = yetkiId;
     }
 
-    public int getPresonelId() {
-        return presonelId;
+    public int getPersonelId() {
+        return personelId;
     }
 
-    public void setPresonelId(int presonelId) {
-        this.presonelId = presonelId;
+    public void setPersonelId(int personelId) {
+        this.personelId = personelId;
     }
 
     public String getSifre() {
@@ -45,7 +40,7 @@ public class AccountsContract {
 
     @Override
     public String toString() {
-        return "AccountsContract{" + "id=" + id + ", yetkiId=" + yetkiId + ", presonelId=" + presonelId + ", sifre=" + sifre + '}';
+        return "AccountsContract{" + "id=" + id + ", yetkiId=" + yetkiId + ", presonelId=" + personelId + ", sifre=" + sifre + '}';
     }
     
 }

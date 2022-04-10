@@ -1,8 +1,13 @@
 package utilities;
 
+import frontend.KategoriEkleFE;
+import frontend.UrunEkleFE;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.SwingUtilities;
 
 public  class MenulerCom {
       
@@ -18,8 +23,8 @@ public  class MenulerCom {
         JMenu urunlerMenu = new JMenu("Ürünler ");
         bar.add(urunlerMenu);
         
-        JMenuItem urunekleItem = new JMenuItem("Ürün Ekle");
-        urunlerMenu.add(urunekleItem);
+        JMenuItem urunEkleItem = new JMenuItem("Ürün Ekle");
+        urunlerMenu.add(urunEkleItem);
         
         JMenuItem kategoriEkleItem = new JMenuItem("Kategori Ekle");
         urunlerMenu.add(kategoriEkleItem);
@@ -31,8 +36,34 @@ public  class MenulerCom {
         JMenuItem kategoriDuzenleItem = new JMenuItem("Kategori Düzenle");
         urunlerMenu.add(kategoriDuzenleItem);
         
+        urunEkleItem.addActionListener(new ActionListener(){
+            
+            @Override
+            public void actionPerformed(ActionEvent e){
+                SwingUtilities.invokeLater(new Runnable(){
+                    
+                    @Override
+                    public void run(){
+                        new UrunEkleFE();
+                    }
+                
+        });
+            }
+        });
+        
+        kategoriEkleItem.addActionListener(new ActionListener(){
+            
+            @Override
+            public void actionPerformed(ActionEvent e){
+                new KategoriEkleFE();
+                
+            }
+        });
+        
         
         return bar;
+
+            
         
     }
     

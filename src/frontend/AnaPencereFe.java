@@ -18,14 +18,14 @@ public class AnaPencereFe extends JFrame implements FeInterfaces{
     
     @Override
     public void initPencere() {
-       // JTabbedPane tabs = initTabs();
-        JMenuBar bar  = MenulerCom.initBar();
+        JTabbedPane tabs = initTabs();
+        JMenuBar bar  = initBar();
         
        // add(tabs);
         setJMenuBar(bar);
         
         setTitle("Satış ve Stoko Programı");
-        setSize(600, 250);
+        setSize(600,250);
         setVisible(true);           /* bu pencere açılsın diyoruz*/
         setLocationRelativeTo(null);   /* penceremizi oluşturduğumuzda ortada durmasını sağlıyoruz..*/
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -37,16 +37,21 @@ public class AnaPencereFe extends JFrame implements FeInterfaces{
         
         return panel;
     }
+    
+    @Override
+    public JMenuBar initBar() {
+        JMenuBar bar =MenulerCom.initBar();
+        
+        
+        return bar;
+    }
 
     @Override
     public JTabbedPane initTabs() {
         return null;
     }
 
-    @Override
-    public JMenuBar initBar() {
-    return null;
-    }
+    
     
     
 }

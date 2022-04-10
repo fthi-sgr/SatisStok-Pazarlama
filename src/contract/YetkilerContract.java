@@ -1,11 +1,8 @@
-
 package contract;
 
-public class KategoriContract {
-    
-    private  int id;
+public class YetkilerContract {
+    private int id;
     private String adi;
-    private int parentId;
 
     public int getId() {
         return id;
@@ -23,17 +20,11 @@ public class KategoriContract {
         this.adi = adi;
     }
 
-    public int getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(int parentId) {
-        this.parentId = parentId;
-    }
-
     @Override
     public String toString() {
-        return adi;
+        return "Yetkiler{" + "id=" + id + ", adi=" + adi + '}';
     }
+    
+    
     
 }

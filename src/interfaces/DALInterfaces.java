@@ -1,10 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package interfaces;
 
+import java.util.List;
 
-public interface DALInterfaces {
+public interface DALInterfaces <T>{
+    
+    public void Insert (T entity);
+    public List <T> GetAll();
+    public T Delete(T entity);
+    public T UpdateT (T entiy);
+    public List <T> GetById(int id );
+     
+
+    
+    
     
 }
