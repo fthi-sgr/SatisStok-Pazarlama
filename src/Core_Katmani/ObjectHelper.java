@@ -9,7 +9,7 @@ public class ObjectHelper extends CoreFields implements CoreInterfaces {
     
     static {
         try {
-            Class.forName("org.postgresql.Driver"); // spl e bağlanma linkimiz 
+            Class.forName("com.mysql.jdbc.Driver"); // spl e bağlanma linkimiz 
         } catch (ClassNotFoundException e) {
            e.printStackTrace ();    
         }
@@ -22,7 +22,7 @@ public class ObjectHelper extends CoreFields implements CoreInterfaces {
         
         try{
         connection = DriverManager.getConnection(getUrl(),getUserName(),getPassword());
-        }catch(SQLException e){
+        }catch(Exception e){
                e.printStackTrace (); 
         }
     return connection;

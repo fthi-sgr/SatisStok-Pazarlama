@@ -1,10 +1,11 @@
+
 package Core_Katmani;
 
 public class CoreFields {
 
-private String userName ="postgres";
-private String password ="123456";
-private String url = "jdbc:postgresql://localhost:5432";    //porjemizin database linkini buraya yapıştırmamız gerekiyor..
+private String userName ="root";
+private String password ="";
+private String url = "";    //porjemizin database linkini buraya yapıştırmamız gerekiyor..
 
     public String getUserName() {
         return userName;
