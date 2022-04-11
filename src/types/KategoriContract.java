@@ -1,14 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package types;
 
 /**
  *
  * @author ultra
  */
-public class KategoriContract {
+public class KategoriContract  {
     
     private  int id;
     private String adi;

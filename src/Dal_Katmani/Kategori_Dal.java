@@ -2,12 +2,13 @@ package Dal_Katmani;
 
 import Core_Katmani.ObjectHelper;
 import java.sql.Connection;
-import contract.KategoriContract;
+import types.KategoriContract;
 import interfaces.DALInterfaces;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 public class Kategori_Dal extends ObjectHelper implements DALInterfaces<KategoriContract>{
@@ -18,7 +19,7 @@ public class Kategori_Dal extends ObjectHelper implements DALInterfaces<Kategori
         try{
             Statement statement=connection.createStatement();
             
-            statement.executeUpdate("INSERT INTO Kategori (Adi, ParentId) VALUES('"+ entity.getAdi()+"',"+entity.getParentId()+")");
+            statement.executeUpdate("INSERT INTO Kategori (Adi, ParentId) VALUES("+ entity.getAdi()+","+entity.getParentId()+")");
             statement.close();
             connection.close();
         }catch (Exception e){
@@ -31,7 +32,8 @@ public class Kategori_Dal extends ObjectHelper implements DALInterfaces<Kategori
 
     @Override
     public List<KategoriContract> GetAll() {
-        List<KategoriContract> datacontract=new ArrayList<KategoriContract>();
+        
+        List<KategoriContract> datacontract=new ArrayList<>();
         Connection connection=getConnection();
         KategoriContract contract;
         try{
@@ -45,17 +47,38 @@ public class Kategori_Dal extends ObjectHelper implements DALInterfaces<Kategori
                 
                 datacontract.add(contract);
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             
             e.printStackTrace();
         }
         return datacontract;
     }
     
+    public List<KategoriContract> GetAllParentId(){
+    
+        List<KategoriContract> datacontract=new ArrayList<>();
+        Connection connection=getConnection();
+        KategoriContract contract;
+        try{
+            Statement statement=connection.createStatement();
+            ResultSet resultSet= statement.executeQuery("SELECT * FROM Kategori WHERE parentId=0");
+            while(resultSet.next()){
+                contract=new KategoriContract();
+                contract.setId(resultSet.getInt("Id"));
+                contract.setAdi(resultSet.getString("Adi"));
+                contract.setParentId(resultSet.getInt("ParentId"));
+                
+                datacontract.add(contract);
+            }
+        }catch(SQLException e){
+            
+            e.printStackTrace();
+        }
+        return datacontract;
     
     
+    }
     
-
     @Override
     public KategoriContract Delete(KategoriContract entity) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
